@@ -1,3 +1,4 @@
+import classes from './QuestionCard.module.css';
 interface propType {
   id: number;
   title: string;
@@ -9,7 +10,7 @@ export default function QuestionCard(props: propType): JSX.Element {
   const { id, title, isPublish, del } = props;
   return (
     <ul>
-      <li>
+      <li className={classes.border}>
         {id}
         {title}
         {isPublish}

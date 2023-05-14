@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import QuestionCard from './components/questionCard';
+import QuestionCard from '../../components/QuestionCard';
 import produce from 'immer';
+import classes from './index.module.scss';
 const questionInit = [
   {
     id: 1,
@@ -45,7 +46,9 @@ export default function List(): JSX.Element {
       {questionList.map((q, i) => (
         <QuestionCard id={q.id} title={q.title} isPublish={q.isPublish} del={del} key={q.id}></QuestionCard>
       ))}
-      <button onClick={add}>添加问卷</button>
+      <button className={classes.border} onClick={add}>
+        添加问卷
+      </button>
     </div>
   );
 }
